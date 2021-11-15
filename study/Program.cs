@@ -9,14 +9,12 @@ namespace study
         static void Main(string[] args)
         {
             Bitmap bitmap = new Bitmap(@"C:\Users\Dev\Downloads/secret.png");
-            Console.WriteLine(alterBitMap(bitmap));
+            alterBitMap(bitmap);
             bitmap.Save(@"C:\Users\Dev\Downloads/secret1.png", ImageFormat.Png);
         }
 
-        public static string alterBitMap(Bitmap bmp)
-        {;
-
-            string extractedText = String.Empty;
+        public static void alterBitMap(Bitmap bmp)
+        {
             int redColor = 0;
 
             for (int i = 0; i < bmp.Height; i++)
@@ -28,8 +26,6 @@ namespace study
                     bmp.SetPixel(j, i, Color.FromArgb(redColor, 0, 0));
                 }
             }
-
-            return extractedText;
         }
     }
 }
